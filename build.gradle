@@ -1,23 +1,13 @@
-plugins {
-    id 'org.springframework.boot' version '2.5.4'
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-    id 'java'
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:7.0.4"
+    }
 }
 
-group = 'com.example'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'com.google.genai:google-genai:0.1.0'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-}
-
-test {
-    useJUnitPlatform()
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }
